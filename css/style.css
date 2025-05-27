@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+}
+
+header {
+    
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+    padding: 1vw;
+}
+
+header img {
+    width: 10vw;
+}
+
+header p {
+    font-family: bahnscrift sans-serif;
+    font-size: 4vw;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.banner img {
+    height: 80vh;
+    align-content: center;
+}
+
+.button {
+    display: flex;
+    gap: 5px;
+    padding: 1vh;
+}
+
+footer {
+    background-color: grey;
+    align-items: center;
+    text-align: center;
+    padding: 3vw;
+}

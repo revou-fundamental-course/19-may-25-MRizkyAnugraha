@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kalkulator Suhu</title>
+
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Link Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Get your own code at fontawesome.com-->
+  </head>
+  <body>
+    <header>
+      <!-- Logo -->
+      <img
+        id="logo"
+        src="img/logo interlaced kalkulator suhu.svg"
+        alt="Logo Kalkulator Suhu"
+      />
+
+      <p>Kalkulator Suhu</p>
+    </header>
+
+    <section class="banner">
+      <img src="img/Background.jpg" alt="Background">
+      
+      <div>
+        <h1>Kalkulator Suhu</h1>
+      </div>
+
+    </section>
+
+    <section class="content">
+      <h3>
+        Celcius ke Fahrenheit<br />
+        Fahrenheit ke Celcius
+      </h3>
+      <p>
+        Masukkan suhu derajat celcius (&deg;C) ke kotak dibawah, lalu klik
+        tombol Konversi untuk mendapatkan hasil dalam bentuk Fahrenheit
+        (&deg;F).
+      </p>
+
+      <div>
+        <form class="form" name="form">
+          <!-- Celcius -->
+          <div id="celcius">
+            <label for="input-celcius">Celcius (&deg;C)</label>
+            <input
+              type="number"
+              placeholder=""
+              id="input-celcius"
+              name="celcius"
+              class=""
+              required=""
+            />
+          </div>
+
+          <!-- Tombol Konversi Reset Reverse -->
+          <div class="button">
+            <!-- Konversi -->
+            <button>
+              <a href="#" class="">Konversi</a>
+            </button>
+
+            <!-- Reset -->
+            <button>
+              <a href="#" class="">Reset</a>
+            </button>
+
+            <!-- Reverse -->
+            <button>
+              <a href="#" class="">Reverse</a>
+            </button>
+          </div>
+          <!-- Fahrenheit -->
+          <div id="fahrenheit">
+            <label for="input-fahrenheit">Fahrenheit (&deg;F)</label>
+            <input
+              type="number"
+              placeholder=""
+              id="input-fahrenheit"
+              name="fahrenheit"
+              class=""
+              required=""
+            />
+          </div>
+          <div id="kalkulasi">
+            <label for="cara-kalkulasi">Cara Kalkulasi</label>
+            <input
+              type="textarea"
+              placeholder=""
+              id="cara-kalkulasi"
+              name="cara-kalkulasi"
+              class=""
+              required=""
+            />
+          </div>
+
+          <p class="keterangan">Fahrenheit ke Celcius</p>
+
+          <h3>Cara Konversi Dari Celcius (&deg;C) ke Fahrenheit (&deg;F)</h3>
+          <hr />
+
+          <p>
+            Suhu <em>S</em> dalam derajat Fahrenheit (&deg;F) sama dengan suhu
+            <em>S</em> dalam derajat Celcius (&deg;C) kali <b>9/5</b> tambah
+            <b>32</b>.
+          </p>
+
+          <br />
+
+          <p>
+            <b
+              ><em>S</em><sub>(&deg;F)</sub> = (<em>S</em><sub>(&deg;C)</sub> x
+              9/5) + 32</b
+            >
+          </p>
+
+          <br />
+
+          <p>atau</p>
+
+          <br />
+
+          <p>
+            <b
+              ><em>S</em><sub>(&deg;F)</sub> = (<em>S</em><sub>(&deg;C)</sub> x
+              1.8) + 32</b
+            >
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div>
+        <p>Kalkulator Suhu by Rizky Anugraha <br>2025</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
