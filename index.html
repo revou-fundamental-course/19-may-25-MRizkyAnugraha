@@ -36,19 +36,15 @@
     </header>
 
     <section class="banner">
-      <img src="img/Background.jpg" alt="Background">
-      
+      <img src="img/Background.jpg" alt="Background" />
+
       <div>
         <h1>Kalkulator Suhu</h1>
       </div>
-
     </section>
 
     <section class="content">
-      <h3>
-        Celcius ke Fahrenheit<br />
-        Fahrenheit ke Celcius
-      </h3>
+      <h3 id="keterangan">Celcius ke Fahrenheit</h3>
       <p>
         Masukkan suhu derajat celcius (&deg;C) ke kotak dibawah, lalu klik
         tombol Konversi untuk mendapatkan hasil dalam bentuk Fahrenheit
@@ -57,6 +53,19 @@
 
       <div>
         <form class="form" name="form">
+          <!-- Fahrenheit -->
+          <div id="fahrenheit">
+            <label for="input-fahrenheit">Fahrenheit (&deg;F)</label>
+            <input
+              type="number"
+              placeholder=""
+              id="input-fahrenheit"
+              name="fahrenheit"
+              class=""
+              required=""
+            />
+          </div>
+
           <!-- Celcius -->
           <div id="celcius">
             <label for="input-celcius">Celcius (&deg;C)</label>
@@ -70,7 +79,11 @@
             />
           </div>
 
-          <!-- Tombol Konversi Reset Reverse -->
+          <div id="warning">
+            <p>Peringatan</p>
+          </div>
+
+          <!-- Tombol-tombol Konversi Reset Reverse -->
           <div class="button">
             <!-- Konversi -->
             <button>
@@ -87,18 +100,7 @@
               <a href="#" class="">Reverse</a>
             </button>
           </div>
-          <!-- Fahrenheit -->
-          <div id="fahrenheit">
-            <label for="input-fahrenheit">Fahrenheit (&deg;F)</label>
-            <input
-              type="number"
-              placeholder=""
-              id="input-fahrenheit"
-              name="fahrenheit"
-              class=""
-              required=""
-            />
-          </div>
+
           <div id="kalkulasi">
             <label for="cara-kalkulasi">Cara Kalkulasi</label>
             <input
@@ -111,45 +113,45 @@
             />
           </div>
 
-          <p class="keterangan">Fahrenheit ke Celcius</p>
-
-          <h3>Cara Konversi Dari Celcius (&deg;C) ke Fahrenheit (&deg;F)</h3>
+          <h3>Cara Konversi Dari Fahrenheit(&deg;F) ke Celcius (&deg;C)</h3>
           <hr />
+          <div id="penjelasan-container">
+            <p>
+              Suhu <em>S</em> dalam derajat Fahrenheit (&deg;F) sama dengan suhu
+              <em>S</em> dalam derajat Celcius (&deg;C) kali <b>9/5</b> tambah
+              <b>32</b>.
+            </p>
 
-          <p>
-            Suhu <em>S</em> dalam derajat Fahrenheit (&deg;F) sama dengan suhu
-            <em>S</em> dalam derajat Celcius (&deg;C) kali <b>9/5</b> tambah
-            <b>32</b>.
-          </p>
+            <br />
 
-          <br />
+            <p>
+              <b
+                ><em>S</em><sub>(&deg;F)</sub> = (<em>S</em
+                ><sub>(&deg;C)</sub> x 9/5) + 32</b
+              >
+            </p>
 
-          <p>
-            <b
-              ><em>S</em><sub>(&deg;F)</sub> = (<em>S</em><sub>(&deg;C)</sub> x
-              9/5) + 32</b
-            >
-          </p>
+            <br />
 
-          <br />
+            <p>atau</p>
 
-          <p>atau</p>
+            <br />
 
-          <br />
+            <p>
+              <b
+                ><em>S</em><sub>(&deg;F)</sub> = (<em>S</em
+                ><sub>(&deg;C)</sub> x 1.8) + 32</b
+              >
+            </p>
+          </div>
 
-          <p>
-            <b
-              ><em>S</em><sub>(&deg;F)</sub> = (<em>S</em><sub>(&deg;C)</sub> x
-              1.8) + 32</b
-            >
-          </p>
         </form>
       </div>
     </section>
 
     <footer id="footer">
       <div>
-        <p>Kalkulator Suhu by Rizky Anugraha <br>2025</p>
+        <p>Kalkulator Suhu by Rizky Anugraha <br />2025</p>
       </div>
     </footer>
 

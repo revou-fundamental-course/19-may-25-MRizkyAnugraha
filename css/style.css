@@ -29,6 +29,16 @@ a {
     align-content: center;
 }
 
+#warning {
+    display: none;
+    background-color: brown;
+    width: 20vw;
+    height: 5vw;
+    align-items: center;
+    text-align: center;
+
+}
+
 .button {
     display: flex;
     gap: 5px;

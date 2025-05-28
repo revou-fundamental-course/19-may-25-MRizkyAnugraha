@@ -22,7 +22,18 @@ window.addEventListener("DOMContentLoaded", () => {
     let val = isCtoF ? inputC.value : inputF.value;
 
     if (!val || isNaN(val)) {
-      alert("Masukkan angka yang valid!");
+      const warning = document.getElementById("warning");
+
+      // Fungsi sembunyikan warning
+      function hideWarning() {
+        warning.style.display = "none";
+      }
+
+      warning.style.display = "block";
+      warning.innerHTML = "Masukkan angka yang valid!";
+
+      setTimeout(hideWarning, 3000);
+      // Setelah 3 detik, warning hilang
       return;
     }
 
@@ -43,7 +54,58 @@ window.addEventListener("DOMContentLoaded", () => {
     inputC.value = "";
     inputF.value = "";
     caraKalkulasi.value = "";
+    hideWarning();
   });
+
+  // Inside DOMContentLoaded event:
+
+  const penjelasanContainer = document.getElementById("penjelasan-container");
+
+  const explanationCtoF = `
+    <p>
+      Suhu <em>S</em> dalam derajat Fahrenheit (&deg;F) sama dengan suhu
+      <em>S</em> dalam derajat Celcius (&deg;C) kali <b>9/5</b> tambah <b>32</b>.
+    </p>
+
+    <br />
+
+    <p>
+      <b><em>S</em><sub>(&deg;F)</sub> = (<em>S</em><sub>(&deg;C)</sub> x 9/5) + 32</b>
+    </p>
+
+    <br />
+
+    <p>atau</p>
+
+    <br />
+
+    <p>
+      <b><em>S</em><sub>(&deg;F)</sub> = (<em>S</em><sub>(&deg;C)</sub> x 1.8) + 32</b>
+    </p>
+  `;
+
+  const explanationFtoC = `
+    <p>
+      Suhu <em>S</em> dalam derajat Celcius (&deg;C) sama dengan suhu
+      <em>S</em> dalam derajat Fahrenheit (&deg;F) dikurangi <b>32</b> lalu dikali <b>5/9</b>.
+    </p>
+
+    <br />
+
+    <p>
+      <b><em>S</em><sub>(&deg;C)</sub> = (<em>S</em><sub>(&deg;F)</sub> - 32) × 5/9</b>
+    </p>
+
+    <br />
+
+    <p>atau</p>
+
+    <br />
+
+    <p>
+      <b><em>S</em><sub>(&deg;C)</sub> = (<em>S</em><sub>(&deg;F)</sub> - 32) × 0,55</b>
+    </p>
+  `;
 
   // Reverse button
   reverseBtn.addEventListener("click", () => {
@@ -57,15 +119,16 @@ window.addEventListener("DOMContentLoaded", () => {
     cDiv.parentNode.insertBefore(fDiv, isCtoF ? cDiv : fDiv);
 
     // Update deskripsi
-    document.querySelector(".keterangan").innerText = isCtoF
+    document.getElementById("keterangan").innerText = isCtoF
       ? "Celcius ke Fahrenheit"
       : "Fahrenheit ke Celcius";
+
+    penjelasanContainer.innerHTML = isCtoF ? explanationCtoF : explanationFtoC;
 
     caraKalkulasi.value = "";
     inputC.value = "";
     inputF.value = "";
+    hideWarning();
   });
 
-  // Set default state: inputF disabled
-  inputF.disabled = true;
 });
