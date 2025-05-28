@@ -11,6 +11,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const resetBtn = document.querySelector(".button button:nth-child(2)");
   const reverseBtn = document.querySelector(".button button:nth-child(3)");
 
+  // Fungsi sembunyikan warning
+  function hideWarning() {
+    warning.style.display = "none";
+  }
+
   // Mencegah tag <a> refreshing page
   document.querySelectorAll(".button a").forEach((a) => {
     a.addEventListener("click", (e) => e.preventDefault());
@@ -23,11 +28,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!val || isNaN(val)) {
       const warning = document.getElementById("warning");
-
-      // Fungsi sembunyikan warning
-      function hideWarning() {
-        warning.style.display = "none";
-      }
 
       warning.style.display = "block";
       warning.innerHTML = "Masukkan angka yang valid!";
@@ -51,10 +51,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Reset button
   resetBtn.addEventListener("click", () => {
+    hideWarning();
     inputC.value = "";
     inputF.value = "";
     caraKalkulasi.value = "";
-    hideWarning();
+    inputC.disabled = false;
+    inputF.disabled = false;
   });
 
   // Inside DOMContentLoaded event:
@@ -125,10 +127,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     penjelasanContainer.innerHTML = isCtoF ? explanationCtoF : explanationFtoC;
 
+    hideWarning();
     caraKalkulasi.value = "";
     inputC.value = "";
     inputF.value = "";
-    hideWarning();
   });
-
 });
