@@ -44,8 +44,8 @@
     </section>
 
     <section class="content">
-      <h3 id="keterangan">Celcius ke Fahrenheit</h3>
-      <p>
+      <h3 id="judul-keterangan">Celcius ke Fahrenheit</h3>
+      <p id="keterangan">
         Masukkan suhu derajat celcius (&deg;C) ke kotak dibawah, lalu klik
         tombol Konversi untuk mendapatkan hasil dalam bentuk Fahrenheit
         (&deg;F).
@@ -61,8 +61,7 @@
               placeholder=""
               id="input-fahrenheit"
               name="fahrenheit"
-              class=""
-              required=""
+              disabled="true"
             />
           </div>
 
@@ -74,8 +73,7 @@
               placeholder=""
               id="input-celcius"
               name="celcius"
-              class=""
-              required=""
+              disable="false"
             />
           </div>
 
@@ -113,21 +111,23 @@
             />
           </div>
 
-          <h3>Cara Konversi Dari Fahrenheit(&deg;F) ke Celcius (&deg;C)</h3>
+          <h3 id="judul-penjelasan">
+            Cara Konversi Dari Celcius(&deg;C) ke Fahrenheit (&deg;F)
+          </h3>
           <hr />
           <div id="penjelasan-container">
             <p>
-              Suhu <em>S</em> dalam derajat Fahrenheit (&deg;F) sama dengan suhu
-              <em>S</em> dalam derajat Celcius (&deg;C) kali <b>9/5</b> tambah
-              <b>32</b>.
+              Suhu <em>S</em> dalam derajat Celcius (&deg;C) sama dengan suhu
+              <em>S</em> dalam derajat Fahrenheit (&deg;F) dikurangi
+              <b>32</b> lalu dikali <b>5/9</b>.
             </p>
 
             <br />
 
             <p>
               <b
-                ><em>S</em><sub>(&deg;F)</sub> = (<em>S</em
-                ><sub>(&deg;C)</sub> x 9/5) + 32</b
+                ><em>S</em><sub>(&deg;C)</sub> = (<em>S</em
+                ><sub>(&deg;F)</sub> - 32) × 5/9</b
               >
             </p>
 
@@ -139,12 +139,11 @@
 
             <p>
               <b
-                ><em>S</em><sub>(&deg;F)</sub> = (<em>S</em
-                ><sub>(&deg;C)</sub> x 1.8) + 32</b
+                ><em>S</em><sub>(&deg;C)</sub> = (<em>S</em
+                ><sub>(&deg;F)</sub> - 32) × 0,55</b
               >
             </p>
           </div>
-
         </form>
       </div>
     </section>

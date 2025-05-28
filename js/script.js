@@ -26,6 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const isCtoF = !inputC.disabled;
     let val = isCtoF ? inputC.value : inputF.value;
 
+    // Warning
     if (!val || isNaN(val)) {
       const warning = document.getElementById("warning");
 
@@ -37,6 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // Hasil convert suhu
     val = parseFloat(val);
     if (isCtoF) {
       const fahrenheit = (val * 9) / 5 + 32;
@@ -55,15 +57,18 @@ window.addEventListener("DOMContentLoaded", () => {
     inputC.value = "";
     inputF.value = "";
     caraKalkulasi.value = "";
-    inputC.disabled = false;
-    inputF.disabled = false;
+    
   });
 
-  // Inside DOMContentLoaded event:
+  // Judul penjelasan celcius dan fahrenheit
 
+  const judulPenjelasan = document.getElementById("judul-penjelasan");
+
+  // Penjelasan celcius dan fahrenheit dinamis
+  
   const penjelasanContainer = document.getElementById("penjelasan-container");
 
-  const explanationCtoF = `
+  const explanationFtoC = `
     <p>
       Suhu <em>S</em> dalam derajat Fahrenheit (&deg;F) sama dengan suhu
       <em>S</em> dalam derajat Celcius (&deg;C) kali <b>9/5</b> tambah <b>32</b>.
@@ -86,7 +91,7 @@ window.addEventListener("DOMContentLoaded", () => {
     </p>
   `;
 
-  const explanationFtoC = `
+  const explanationCtoF = `
     <p>
       Suhu <em>S</em> dalam derajat Celcius (&deg;C) sama dengan suhu
       <em>S</em> dalam derajat Fahrenheit (&deg;F) dikurangi <b>32</b> lalu dikali <b>5/9</b>.
@@ -109,6 +114,7 @@ window.addEventListener("DOMContentLoaded", () => {
     </p>
   `;
 
+
   // Reverse button
   reverseBtn.addEventListener("click", () => {
     // Toggle input enabled/disabled
@@ -120,11 +126,20 @@ window.addEventListener("DOMContentLoaded", () => {
     // Tukar urutan HTML
     cDiv.parentNode.insertBefore(fDiv, isCtoF ? cDiv : fDiv);
 
-    // Update deskripsi
-    document.getElementById("keterangan").innerText = isCtoF
+    // Update judul keterangan
+    document.getElementById("judul-keterangan").innerText = isCtoF
       ? "Celcius ke Fahrenheit"
       : "Fahrenheit ke Celcius";
 
+    // Update keterangan
+
+
+    // Update judul penjelasan
+    document.getElementById("judul-penjelasan").innerText = isCtoF
+      ? "Cara Konversi Dari Celcius(°C) ke Fahrenheit (°F)"
+      : "Cara Konversi Dari Fahrenheit(°F) ke Celcius (°C)";
+
+    // Update penjelasan
     penjelasanContainer.innerHTML = isCtoF ? explanationCtoF : explanationFtoC;
 
     hideWarning();
