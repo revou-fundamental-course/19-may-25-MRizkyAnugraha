@@ -60,6 +60,17 @@ window.addEventListener("DOMContentLoaded", () => {
     
   });
 
+  // Keterangan di bawah judul dinamis
+  const keterangan = document.getElementById("keterangan");
+
+  const keteranganCtoF = `Masukkan suhu derajat celcius (&deg;C) ke kotak dibawah, lalu klik
+        tombol Konversi untuk mendapatkan hasil dalam bentuk fahrenheit
+        (&deg;F).`;
+
+  const keteranganFtoC = `Masukkan suhu derajat fahrenheit (&deg;F) ke kotak dibawah, lalu klik
+        tombol Konversi untuk mendapatkan hasil dalam bentuk celcius
+        (&deg;C).`;
+
   // Judul penjelasan celcius dan fahrenheit
 
   const judulPenjelasan = document.getElementById("judul-penjelasan");
@@ -132,7 +143,7 @@ window.addEventListener("DOMContentLoaded", () => {
       : "Fahrenheit ke Celcius";
 
     // Update keterangan
-
+    keterangan.innerHTML = isCtoF ? keteranganCtoF : keteranganFtoC;
 
     // Update judul penjelasan
     document.getElementById("judul-penjelasan").innerText = isCtoF
