@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Konversi button
   konversiBtn.addEventListener("click", () => {
-    const isCtoF = !inputC.disabled;
+    const isCtoF = inputC.disabled;
     let val = isCtoF ? inputC.value : inputF.value;
 
     // Warning
@@ -135,23 +135,23 @@ window.addEventListener("DOMContentLoaded", () => {
     inputF.disabled = !isCtoF;
 
     // Tukar urutan HTML
-    cDiv.parentNode.insertBefore(fDiv, isCtoF ? cDiv : fDiv);
+    cDiv.parentNode.insertBefore(fDiv, isCtoF ? fDiv : cDiv);
 
     // Update judul keterangan
-    document.getElementById("judul-keterangan").innerText = isCtoF
-      ? "Celcius ke Fahrenheit"
-      : "Fahrenheit ke Celcius";
+    document.getElementById("judul-keterangan").innerText = isCtoF      
+      ? "Fahrenheit ke Celcius"
+      : "Celcius ke Fahrenheit";
 
     // Update keterangan
-    keterangan.innerHTML = isCtoF ? keteranganCtoF : keteranganFtoC;
+    keterangan.innerHTML = isCtoF ? keteranganFtoC : keteranganCtoF;
 
     // Update judul penjelasan
-    document.getElementById("judul-penjelasan").innerText = isCtoF
-      ? "Cara Konversi Dari Celcius(°C) ke Fahrenheit (°F)"
-      : "Cara Konversi Dari Fahrenheit(°F) ke Celcius (°C)";
+    document.getElementById("judul-penjelasan").innerText = isCtoF     
+      ? "Cara Konversi Dari Fahrenheit(°F) ke Celcius (°C)"
+      : "Cara Konversi Dari Celcius(°C) ke Fahrenheit (°F)";
 
     // Update penjelasan
-    penjelasanContainer.innerHTML = isCtoF ? explanationCtoF : explanationFtoC;
+    penjelasanContainer.innerHTML = isCtoF ? explanationFtoC : explanationCtoF;
 
     hideWarning();
     caraKalkulasi.value = "";
